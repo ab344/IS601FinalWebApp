@@ -64,7 +64,7 @@ def form_insert_post():
     inputData = (request.form.get('City'), request.form.get('fldState'), request.form.get('ActiveRentals'),
                  request.form.get('AverageDailyRate'), request.form.get('OccupancyRate'),
                  request.form.get('Revenue'))
-    sql_insert_query = """INSERT INTO airbnbtbl (City,fldState,ActiveRentals,AverageDailyRate,OccupancyRate,Revenue) VALUES (%s, %s,%s, %s,%s, %s,%s) """
+    sql_insert_query = """INSERT INTO airbnbtbl (City,fldState,ActiveRentals,AverageDailyRate,OccupancyRate,Revenue) VALUES (%s, %s, %s, %s, %s, %s,) """
     cursor.execute(sql_insert_query, inputData)
     mysql.get_db().commit()
     return redirect("/", code=302)
@@ -104,7 +104,7 @@ def api_add() -> str:
     inputData = (content['City'], content['fldState'], content['ActiveRentals'],
                  content['AverageDailyRate'], content['OccupancyRate'],
                  content['Revenue'])
-    sql_insert_query = """INSERT INTO airbnbtbl (City,fldState,ActiveRentals,AverageDailyRate,OccupancyRate,Revenue) VALUES (%s, %s,%s, %s,%s, %s,%s) """
+    sql_insert_query = """INSERT INTO airbnbtbl (City,fldState,ActiveRentals,AverageDailyRate,OccupancyRate,Revenue) VALUES (%s, %s, %s, %s, %s, %s,) """
     cursor.execute(sql_insert_query, inputData)
     mysql.get_db().commit()
     resp = Response(status=201, mimetype='application/json')

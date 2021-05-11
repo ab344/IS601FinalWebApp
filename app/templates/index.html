@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block content %}
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">City</th>
+        <th scope="col">State</th>
+        <th scope="col">Active Rentals</th>
+        <th scope="col">Average Daily Rate($)</th>
+        <th scope="col">Occupancy Rate(%)</th>
+        <th scope="col">Revenue($)</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for airbnb in airbnbtbl %}
+    <tr>
+        <td><a href="view/{{airbnb.id}}">{{ airbnb.City }}</a></td>
+        <td>{{ airbnb.fldState }}</td>
+        <td>{{ airbnb.ActiveRentals }}</td>
+        <td>{{ airbnb.AverageDailyRate }}</td>
+        <td>{{ airbnb.OccupancyRate }}</td>
+        <td>{{ airbnb.Revenue }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

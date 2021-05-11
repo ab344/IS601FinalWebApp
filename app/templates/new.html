@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% block content %}
+<form action="/airbnb/new" method="POST">
+    <div class="row">
+        <div class="col">
+            <label for="City">City</label>
+            <input id="City" type="text" class="form-control" placeholder="City" name="City">
+        </div>
+        <div class="col">
+            <label for="fldState">State</label>
+            <input id="fldState" type="text" class="form-control" placeholder="fldState"
+                   name="fldState">
+        </div>
+        <div class="col">
+            <label for="ActiveRentals">Active Rentals</label>
+            <input id="ActiveRentals" type="text" class="form-control" placeholder="ActiveRentals" name="ActiveRentals">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <label for="AverageDailyRate">Average Daily Rate</label>
+            <input id="AverageDailyRate" type="text" class="form-control" placeholder="AverageDailyRate" name="AverageDailyRate">
+        </div>
+        <div class="col">
+            <label for="OccupancyRate">Occupancy Rate</label>
+            <input id="OccupancyRate" type="text" class="form-control" placeholder="OccupancyRate" name="OccupancyRate">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label for="Revenue">Revenue</label>
+            <input id="Revenue" type="text" class="form-control" placeholder="Revenue"
+                   name="Revenue">
+        </div>
+    </div>
+    <button type="submit" class="btn btn-success">Success</button>
+
+</form>
+
+{% endblock %}
